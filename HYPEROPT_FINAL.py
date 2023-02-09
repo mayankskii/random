@@ -1,3 +1,14 @@
+#%pip install lightgbm hyperopt shap lime optbinning scikit-plot pandas-profiling mlflow fastparquet openpyxl imblearn pyod pip -U -q
+import pandas as pd
+import numpy as np
+import warnings
+warnings.filterwarnings("ignore")
+from pandasql import sqldf
+
+from optbinning import OptimalBinning, ContinuousOptimalBinning
+from tqdm import tqdm_notebook as tqdm
+
+
 # Data Filter
 c1 = (data2['claim_repudiation_ind']==0) | (data2['claim_repudiation_ind'].isna())
 c2 = (data2['buildings_claim_ind']==1) | (data2['buildings_claim_ind'].isna())
